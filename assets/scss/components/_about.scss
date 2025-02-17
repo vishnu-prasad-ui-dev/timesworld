@@ -1,0 +1,65 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.about {
+     padding: size(40) 0;
+
+     @include min(991.98) {
+          padding: 130px 0px 108px 0px;
+     }
+
+     p {
+          padding: size(20) 0;
+          margin: 0;
+
+          @include min(560) {
+               padding: size(28) 0 size(42) 0;
+          }
+
+          @include min(991.98) {
+               padding: size(38) 0 size(52) 0;
+          }
+
+     }
+
+     &__content {
+          padding: 0;
+
+          @include min(991.98) {
+               padding: 0 size(66);
+          }
+
+          &-image-block {
+               position: relative;
+               max-width: 100%;
+               padding-top: 180px;
+               display: flex;
+               justify-content: center;
+
+               @include min(991.98) {
+                    padding-top: 23px;
+               }
+
+               img {
+                    border-radius: 10px;
+                    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+
+               }
+
+               .img-1 {
+                    position: relative;
+                    z-index: 1;
+                    width: 60%;
+               }
+
+               .img-2 {
+                    position: absolute;
+                    z-index: 2;
+                    bottom: 170px;
+                    right: 0;
+                    width: 60%;
+
+               }
+          }
+     }
+}

@@ -1,0 +1,115 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.home-banner {
+     &-item {
+          &Content {
+               width: 100%;
+               margin: auto;
+               position: absolute;
+               left: 0;
+               right: 0;
+               top: 50%;
+               transform: translateY(-5%);
+
+               @include max(1600) {
+                    transform: translateY(-20%);
+               }
+
+               .href-link {
+                    margin: 10px auto;
+
+                    @include min(500) {
+                         margin: 55px auto 0px auto;
+                    }
+               }
+
+               h1 {
+                    font-size: size(20);
+                    font-weight: $font-regular;
+                    font-family: "Felix Titling";
+                    @include lineHeight(16, 25);
+
+                    @include min(400) {
+                         font-size: size(24);
+                         @include lineHeight(28, 42);
+                    }
+
+                    @include min(600) {
+                         font-size: size(28);
+                         @include lineHeight(28, 42);
+                    }
+
+                    @include min(1200) {
+                         font-size: size(48);
+                         @include lineHeight(48, 72);
+                    }
+               }
+
+               button {
+                    margin: 55px auto 0px auto;
+                    padding: size(18) size(29) size(18) size(29);
+                    font-weight: $font-medium;
+               }
+          }
+
+          img {
+               width: 100%;
+          }
+     }
+
+     &-overlay {
+          content: "";
+          position: absolute;
+          background: linear-gradient(181.28deg, #000000 -28%, rgba(102, 102, 102, 0) 100%);
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          right: 0;
+     }
+
+     .swiper-slide img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+     }
+
+     .swiper-pagination-bullets {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+
+          @include min(568) {
+               bottom: 16px;
+          }
+
+          @include min(1200) {
+               bottom: 60px;
+          }
+
+          @include min(1400) {
+               bottom: 80px;
+          }
+
+          bottom: 10px;
+          z-index: 1;
+          left: 50%;
+          transform: translate(-50%);
+
+          .swiper-pagination-bullet {
+               height: 11px;
+               width: 11px;
+               background-color: rgba(#fff, 0.3);
+               display: block;
+               border-radius: 50%;
+               margin: 0 6px;
+               cursor: pointer;
+
+               &.swiper-pagination-bullet-active {
+                    position: relative;
+                    background-color: $white;
+               }
+          }
+     }
+}

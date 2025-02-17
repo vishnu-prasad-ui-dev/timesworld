@@ -1,0 +1,233 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.categories {
+
+     @include min(991.98) {
+          padding: size(78) size(0) size(71) size(0);
+     }
+
+     padding: size(40) 0;
+
+     .text-span {
+          font-size: size(14);
+          letter-spacing: 5px;
+          margin-bottom: 22px;
+     }
+
+     .shape-top {
+          position: absolute;
+          right: 86px;
+          top: 28px;
+          width: 10%;
+          animation: chaoticMove 10s infinite alternate ease-in-out;
+
+          @include min(600) {
+               top: 92px;
+               width: 10%;
+          }
+
+          @include min(1400) {
+               top: 160px;
+          }
+     }
+
+     .shape-bottom {
+          position: absolute;
+          bottom: 28px;
+          left: 70px;
+          width: 10%;
+          animation: chaoticMove 10s infinite alternate ease-in-out;
+
+          @include min(600) {
+               bottom: 92px;
+               width: 10%;
+          }
+
+          @include min(1400) {
+               bottom: 168px;
+          }
+     }
+
+     .swiper-container-category {
+          margin: 0;
+          padding: 30px 0 85px 0;
+
+          @include min(600) {
+               margin: 0 68px;
+          }
+
+          @include min(991.98) {
+               padding: 68px 0 140px 0;
+          }
+     }
+
+     &__item {
+          cursor: pointer;
+          transition: all .5s ease-in-out;
+
+          img {
+               width: 100%;
+          }
+
+          h5 {
+               font-size: size(14);
+               font-family: "Felix Titling";
+
+               @include min(768) {
+                    font-size: size(20);
+               }
+
+               @include min(1400) {
+                    font-size: size(24);
+               }
+          }
+
+          &__content {
+               position: absolute;
+               bottom: -55px;
+               background: $white;
+               padding: 20px;
+               width: 82%;
+               margin: 0 auto;
+               left: 0;
+               right: 0;
+               height: auto;
+               overflow: hidden;
+               transition: max-height .8s linear;
+
+               @include min(1199.98) {
+                    position: absolute;
+                    max-height: 87px;
+               }
+
+
+               @include min(1400) {
+                    padding: 38px 38px 38px 31px;
+
+               }
+
+               p {
+                    font-size: size(14);
+                    padding-block: size(18);
+
+                    @include min(768) {
+                         font-size: size(16);
+                         padding-block: size(20);
+                    }
+
+                    @include min(1400) {
+                         font-size: size(20);
+                         padding-block: size(28);
+
+                    }
+               }
+
+          }
+
+          &:hover &__content {
+               transition: max-height 2s;
+               max-height: 100%;
+          }
+     }
+}
+
+@include max(1199.98) {
+     .swiper-pagination {
+          .swiper-button-prev3 {
+               @include min(768) {
+                    height: 38px;
+                    width: 50px;
+                    left: 0px;
+               }
+
+               top: 40%;
+               left: -85px;
+               position: absolute;
+               z-index: 1;
+
+               @include min(1450) {
+                    height: 38px;
+                    width: 85px;
+                    left: auto;
+                    left: -85px;
+               }
+
+               &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 38px;
+                    background-image: url(../../icons/arrow-left.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100% auto;
+                    background-position: center;
+
+                    @include min(1450) {
+                         width: 100%;
+                    }
+               }
+          }
+
+          .swiper-button-next3 {
+               @include min(768) {
+                    height: 38px;
+                    width: 50px;
+                    right: 0px;
+               }
+
+               top: 40%;
+               right: -85px;
+               position: absolute;
+               z-index: 1;
+
+               @include min(1450) {
+                    height: 38px;
+                    width: 85px;
+                    right: auto;
+                    right: -85px;
+               }
+
+               &:after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 38px;
+                    background-image: url(../../icons/arrow-right.svg);
+                    background-repeat: no-repeat;
+                    background-size: 100% auto;
+                    background-position: center;
+
+                    @include min(1450) {
+                         width: 100%;
+                    }
+               }
+          }
+     }
+}
+
+@keyframes chaoticMove {
+     0% {
+          transform: translate(0, 0);
+     }
+
+     20% {
+          transform: translate(50%, 30%);
+     }
+
+     40% {
+          transform: translate(-30%, 60%);
+     }
+
+     60% {
+          transform: translate(20%, -50%);
+     }
+
+     80% {
+          transform: translate(-60%, -30%);
+     }
+
+     100% {
+          transform: translate(0, 0);
+     }
+}
